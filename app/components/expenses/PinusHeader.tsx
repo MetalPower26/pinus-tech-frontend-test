@@ -1,7 +1,9 @@
 const PinusHeader = () => {
     return (
         <div>
-            <span className="text-black">PINUS Expense Tracker</span>
+            <p className="font-black text-black text-3xl">
+                PINUS Expense Tracker
+            </p>
         </div>
     );
 };
