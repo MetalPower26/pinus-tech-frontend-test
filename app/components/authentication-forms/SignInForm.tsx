@@ -3,13 +3,17 @@ import React, { useState } from 'react';
 import CustomInput from '../general/CustomInput';
 import Link from 'next/link';
 import { API_ENDPOINT } from '@/utils/constants';
+import { useRouter } from 'next/navigation';
 
 const SignInForm: React.FC = (): React.ReactElement => {
     const [emailOrUsername, setEmailOrUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+
     const [loading, setLoading] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [showErrorMessage, setShowErrorMessage] = useState<boolean>(false);
+
+    const router = useRouter();
 
     const postSignInData = () => {
         const url = `${API_ENDPOINT}/api/auth/login`;
@@ -37,9 +41,10 @@ const SignInForm: React.FC = (): React.ReactElement => {
         setShowErrorMessage(false);
         setLoading(true);
         postSignInData()
-            .then(() => {
+            .then((data) => {
                 setLoading(false);
-                alert('You have successfully logged in!');
+                sessionStorage.setItem('token', data['token']);
+                router.push('/expenses');
             })
             .catch((err) => {
                 setErrorMessage(err.message);

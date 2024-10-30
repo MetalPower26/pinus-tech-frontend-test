@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import CustomInput from '../general/CustomInput';
 import Link from 'next/link';
 import { API_ENDPOINT } from '@/utils/constants';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const SignUpForm: React.FC = (): React.ReactElement => {
     const [name, setName] = useState<string>('');
@@ -14,6 +14,8 @@ const SignUpForm: React.FC = (): React.ReactElement => {
     const [showErrorMessage, setShowErrorMessage] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
+
+    const router = useRouter();
 
     const postSignUpData = () => {
         const url = `${API_ENDPOINT}/api/auth/register`;
@@ -45,7 +47,7 @@ const SignUpForm: React.FC = (): React.ReactElement => {
         postSignUpData()
             .then(() => {
                 setLoading(false);
-                redirect('/');
+                router.push('/');
             })
             .catch((err) => {
                 setErrorMessage(err.message);
