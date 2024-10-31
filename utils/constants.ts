@@ -1,0 +1,1 @@
+export const API_ENDPOINT = "https://pinus-tech-expense-api.vercel.app"
