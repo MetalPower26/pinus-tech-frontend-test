@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import CustomInput from '../general/CustomInput';
 import Link from 'next/link';
-import { API_ENDPOINT } from '@/utils/constants';
+import { API_BASE_URL } from '@/utils/constants';
 import { useRouter } from 'next/navigation';
 
 const SignUpForm: React.FC = (): React.ReactElement => {
@@ -18,7 +18,7 @@ const SignUpForm: React.FC = (): React.ReactElement => {
     const router = useRouter();
 
     const postSignUpData = () => {
-        const url = `${API_ENDPOINT}/api/auth/register`;
+        const url = `${API_BASE_URL}/api/auth/register`;
         return fetch(url, {
             method: 'POST',
             headers: {

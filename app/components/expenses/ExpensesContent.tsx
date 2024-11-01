@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import ContentWrapper from './ContentWrapper';
 import OuterWrapper from './OuterWrapper';
-import { API_ENDPOINT } from '@/utils/constants';
+import { API_BASE_URL } from '@/utils/constants';
 import ExpenseComponent from './ExpenseComponent';
 import AddExpensesModal from './AddExpensesModal';
 import { useRouter } from 'next/navigation';
@@ -50,7 +50,7 @@ const ExpensesContent = () => {
     };
 
     const getExpenses = () => {
-        const url = `${API_ENDPOINT}/api/expenses`;
+        const url = `${API_BASE_URL}/api/expenses`;
         fetch(url, {
             method: 'GET',
             headers: {

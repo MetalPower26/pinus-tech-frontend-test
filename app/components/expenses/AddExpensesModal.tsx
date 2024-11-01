@@ -1,7 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import ExpensesInput from '../general/ExpensesInput';
 import { useState } from 'react';
-import { API_ENDPOINT } from '@/utils/constants';
+import { API_BASE_URL } from '@/utils/constants';
 import { useRouter } from 'next/navigation';
 import { Expense } from './ExpensesContent';
 
@@ -37,7 +37,7 @@ const AddExpensesModal = ({
     };
 
     const postExpenseData = () => {
-        const url = `${API_ENDPOINT}/api/expenses`;
+        const url = `${API_BASE_URL}/api/expenses`;
         return fetch(url, {
             method: 'POST',
             headers: {

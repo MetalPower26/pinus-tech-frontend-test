@@ -1,4 +1,4 @@
-import { API_ENDPOINT } from '@/utils/constants';
+import { API_BASE_URL } from '@/utils/constants';
 import { Expense } from './ExpensesContent';
 
 const ExpenseComponent = ({
@@ -18,7 +18,7 @@ const ExpenseComponent = ({
     };
 
     const deleteExpense = () => {
-        const url = `${API_ENDPOINT}/api/expenses/${expense._id}`;
+        const url = `${API_BASE_URL}/api/expenses/${expense._id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {
