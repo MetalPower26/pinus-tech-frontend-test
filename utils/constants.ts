@@ -1,1 +1,1 @@
-export const API_ENDPOINT = "https://pinus-tech-expense-api.vercel.app"
+export const API_BASE_URL = "https://pinus-tech-expense-api.vercel.app"

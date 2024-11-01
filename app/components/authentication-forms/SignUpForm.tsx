@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import CustomInput from '../general/CustomInput';
 import Link from 'next/link';
-import { API_ENDPOINT } from '@/utils/constants';
-import { redirect } from 'next/navigation';
+import { API_BASE_URL } from '@/utils/constants';
+import { useRouter } from 'next/navigation';
 
 const SignUpForm: React.FC = (): React.ReactElement => {
     const [name, setName] = useState<string>('');
@@ -15,8 +15,10 @@ const SignUpForm: React.FC = (): React.ReactElement => {
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
 
+    const router = useRouter();
+
     const postSignUpData = () => {
-        const url = `${API_ENDPOINT}/api/auth/register`;
+        const url = `${API_BASE_URL}/api/auth/register`;
         return fetch(url, {
             method: 'POST',
             headers: {
@@ -45,7 +47,7 @@ const SignUpForm: React.FC = (): React.ReactElement => {
         postSignUpData()
             .then(() => {
                 setLoading(false);
-                redirect('/');
+                router.push('/');
             })
             .catch((err) => {
                 setErrorMessage(err.message);
