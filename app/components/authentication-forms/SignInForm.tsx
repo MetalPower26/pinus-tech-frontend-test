@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import CustomInput from '../general/CustomInput';
 import Link from 'next/link';
-import { API_ENDPOINT } from '@/utils/constants';
+import { API_BASE_URL } from '@/utils/constants';
 import { useRouter } from 'next/navigation';
 
 const SignInForm: React.FC = (): React.ReactElement => {
@@ -16,7 +16,7 @@ const SignInForm: React.FC = (): React.ReactElement => {
     const router = useRouter();
 
     const postSignInData = () => {
-        const url = `${API_ENDPOINT}/api/auth/login`;
+        const url = `${API_BASE_URL}/api/auth/login`;
         return fetch(url, {
             method: 'POST',
             headers: {
