@@ -60,16 +60,13 @@ const ExpensesContent = () => {
         })
             .then((resp) => {
                 if (resp.status === 401) {
-                    sessionStorage.removeItem('auth');
+                    sessionStorage.removeItem('token');
                     router.push('/');
                 }
                 return resp.json();
             })
             .then((data) => {
-                if (data.length !== expenses.length) {
-                    console.log(data);
-                    setExpenses(data);
-                }
+                setExpenses(data);
             });
     };
 
