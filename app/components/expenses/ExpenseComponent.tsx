@@ -37,6 +37,25 @@ const ExpenseComponent = ({
             });
     };
 
+    // const updateExpense = () => {
+    //     const url = `${API_BASE_URL}/api/expenses/${expense._id}`;
+    //     fetch(url, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+    //         },
+    //         body: JSON.stringify({
+    //             title: expense.title,
+    //             description: expense.description,
+    //             amount: expense.amount,
+    //             category: expense.category,
+    //         }),
+    //     }).then((resp) => {
+    //         return resp.json();
+    //     });
+    // };
+
     return (
         <div className="border-2 border-black rounded-lg p-2">
             <div className="flex justify-between">
