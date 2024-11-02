@@ -57,9 +57,10 @@ const SignUpForm: React.FC = (): React.ReactElement => {
     };
 
     return (
-        <div className="flex flex-col items-center">
-            <div className="flex gap-y-2">
-                <form className="flex flex-col gap-y-2" onSubmit={handleSubmit}>
+        <div className="flex flex-col items-center justify-center min-h-screen">
+            <div className="w-full p-8 bg-white rounded-lg shadow-lg">
+                <h2 className="text-2xl font-semibold text-center text-gray-800">Sign Up</h2>
+                <form className="flex flex-col gap-y-4 mt-6" onSubmit={handleSubmit}>
                     <CustomInput setState={setName} label="Name" value={name} />
                     <CustomInput
                         setState={setEmail}
@@ -77,26 +78,26 @@ const SignUpForm: React.FC = (): React.ReactElement => {
                         value={password}
                         type="password"
                     />
-                    <input
-                        className="text-black border-[1px] border-black cursor-pointer"
+                    <button
+                        className="w-full py-2 mt-4 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none disabled:opacity-50"
                         type="submit"
-                        value="Sign Up"
                         disabled={loading}
-                    />
+                    >
+                        Sign Up
+                    </button>
                 </form>
+                <p className="mt-4 text-center text-gray-600">
+                    Already have an account?{' '}
+                    <Link className="text-blue-500 hover:underline" href="/">
+                        Sign in here
+                    </Link>
+                </p>
+                {showErrorMessage && (
+                    <div className="mt-4 text-sm text-center text-white bg-red-500 rounded p-2">
+                        {errorMessage}
+                    </div>
+                )}
             </div>
-            <p className="text-black">
-                Already have an account? Sign in{' '}
-                <Link
-                    href="/"
-                    className="text-blue-700 underline cursor-pointer">
-                    here
-                </Link>
-                .
-            </p>
-            {showErrorMessage ? (
-                <span className="bg-red-500">{errorMessage}</span>
-            ) : null}
         </div>
     );
 };
