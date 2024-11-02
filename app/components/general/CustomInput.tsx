@@ -1,3 +1,4 @@
+import TextField from '@mui/material/TextField';
 import React from 'react';
 
 interface CustomInputProps {
@@ -19,15 +20,11 @@ const CustomInput: React.FC<CustomInputProps> = ({
     };
 
     return (
-        <div className="flex justify-between">
-            <label className="text-black font-bold">{label}</label>
-            <input
-                className="border-[1px] border-black text-black"
-                name={label}
-                type={type}
-                value={value}
-                onChange={handleChange}
-            />
+        <div className="flex justify-between p-1">
+            <label className="text-black font-bold mx-3 my-auto">{label}</label>
+            <TextField className="border-[1px] border-black text-black mx-3"
+             name={label} type={type} value={value} onChange={handleChange} 
+             variant="outlined" size="small" />
         </div>
     );
 };
