@@ -13,7 +13,7 @@ const PinusHeader = () => {
                     <p className="font-bold text-4xl">PINUS Expense Tracker</p>
                 </ContentWrapper>
             </OuterWrapper>
-            <OuterWrapper color="text-white text-lg font-content bg-red-500">
+            <OuterWrapper color="text-white text-lg font-content bg-orange-600">
                 <ContentWrapper>
                     <p>Made for pinustech</p>
                 </ContentWrapper>

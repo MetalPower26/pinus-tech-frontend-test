@@ -86,8 +86,8 @@ const ExpensesContent = () => {
                             <p>Total : $1000</p>
                         </div>
                         <button
-                            className="bg-blue-700 hover:shadow-md transition-shadow 
-                                rounded-lg py-1 px-3"
+                            className="bg-blue-700 hover:shadow-md hover:shadow-blue-600/30
+                                transition-shadow rounded-lg py-1 px-3"
                             onClick={() => setOpen(true)}>
                             + Add expenses
                         </button>
@@ -96,7 +96,7 @@ const ExpensesContent = () => {
             </OuterWrapper>
             <OuterWrapper>
                 <ContentWrapper>
-                    <div className="w-full flex justify-between">
+                    <div className="w-full mt-3 flex justify-between">
                         <div className="text-2xl font-bold">Expense List</div>
                         <div className="font-content">
                             Filter by category:{' '}
