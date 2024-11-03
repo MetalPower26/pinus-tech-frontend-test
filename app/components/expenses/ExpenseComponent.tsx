@@ -38,7 +38,7 @@ const ExpenseComponent = ({
     };
 
     return (
-        <div className="border-2 border-black rounded-lg p-2">
+        <div className="border-2 border-blue-900 rounded-lg p-4 hover:shadow-lg transition-shadow">
             <div className="flex justify-between">
                 <div>
                     #{id} | {convertDate(expense?.date)}

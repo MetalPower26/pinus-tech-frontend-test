@@ -19,7 +19,7 @@ const ExpensesPage = () => {
         return (
             <div className="bg-white min-h-screen w-full">
                 <div className="pb-4">
-                    <div className="text-black w-full flex flex-col items-center">
+                    <div className=" w-full flex flex-col items-center">
                         <PinusHeader />
                         <ExpensesContent />
                     </div>

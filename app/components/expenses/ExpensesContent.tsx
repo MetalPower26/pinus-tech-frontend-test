@@ -120,16 +120,18 @@ const ExpensesContent = () => {
             </OuterWrapper>
             <OuterWrapper>
                 <ContentWrapper>
-                    {expenses.length > 0
-                        ? expenses.map((exp, index) => (
-                              <ExpenseComponent
-                                  key={exp.createdAt}
-                                  id={index + 1}
-                                  expense={exp}
-                                  setExpenses={setExpenses}
-                              />
-                          ))
-                        : null}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        {expenses.length > 0
+                            ? expenses.map((exp, index) => (
+                                <ExpenseComponent
+                                    key={exp.createdAt}
+                                    id={index + 1}
+                                    expense={exp}
+                                    setExpenses={setExpenses}
+                                />
+                            ))
+                            : null}
+                    </div>
                 </ContentWrapper>
             </OuterWrapper>
         </>

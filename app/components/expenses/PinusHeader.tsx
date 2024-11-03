@@ -10,10 +10,10 @@ const PinusHeader = () => {
             {' '}
             <OuterWrapper>
                 <ContentWrapper>
-                    <p className="font-black text-4xl">PINUS Expense Tracker</p>
+                    <p className="font-bold text-4xl">PINUS Expense Tracker</p>
                 </ContentWrapper>
             </OuterWrapper>
-            <OuterWrapper color="bg-red-500">
+            <OuterWrapper color="text-white text-lg font-poppins bg-red-500">
                 <ContentWrapper>
                     <p>Made for pinustech</p>
                 </ContentWrapper>
