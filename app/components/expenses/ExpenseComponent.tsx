@@ -57,24 +57,25 @@ const ExpenseComponent = ({
     // };
 
     return (
-        <div className="border-2 border-blue-900 rounded-lg p-4 hover:shadow-lg transition-shadow">
-            <div className="flex justify-between">
-                <div>
+        <div className="border border-gray-300 rounded-xl p-6 m-3 hover:shadow-md transition-shadow bg-white">
+            <div className="flex justify-between items-center mb-2 text-gray-600">
+                <div className="text-sm font-medium">
                     #{id} | {convertDate(expense?.date)}
                 </div>
-                <div>{expense.category}</div>
+                <div className="text-sm font-semibold text-blue-800">{expense.category}</div>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between items-start mb-4">
                 <div>
-                    <p>{expense?.title}</p>
-                    <p>{expense?.description}</p>
+                    <p className="text-lg font-semibold text-gray-900">{expense?.title}</p>
+                    <p className="text-sm text-gray-600">{expense?.description}</p>
                 </div>
-                <div>S$ {expense?.amount}</div>
+                <div className="text-lg font-bold text-green-600">S$ {expense?.amount}</div>
             </div>
             <div className="flex gap-x-2 justify-end">
-                {/* <button className="border-2 border-black px-2">Edit</button> */}
+                {/* Uncomment if needed */}
+                {/* <button className="border border-gray-400 rounded-lg px-3 py-1 text-sm hover:bg-gray-100 transition">Edit</button> */}
                 <button
-                    className="border-2 border-black px-2"
+                    className="border border-red-500 text-red-500 rounded-lg px-3 py-1 text-sm hover:bg-red-50 transition"
                     onClick={deleteExpense}>
                     Delete
                 </button>

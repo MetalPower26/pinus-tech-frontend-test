@@ -81,13 +81,13 @@ const ExpensesContent = () => {
             ) : null}
             <OuterWrapper color="bg-blue-900">
                 <ContentWrapper>
-                    <div className="flex justify-between items-center text-white">
-                        <div>
-                            <p>Total</p>
-                            <p>$1000</p>
+                    <div className="flex justify-between items-center text-white font-content">
+                        <div className="flex">
+                            <p>Total : $1000</p>
                         </div>
                         <button
-                            className="border-[1px] border-white p-1"
+                            className="bg-blue-700 hover:shadow-md transition-shadow 
+                                rounded-lg py-1 px-3"
                             onClick={() => setOpen(true)}>
                             + Add expenses
                         </button>
@@ -97,8 +97,8 @@ const ExpensesContent = () => {
             <OuterWrapper>
                 <ContentWrapper>
                     <div className="w-full flex justify-between">
-                        <div>Expense List</div>
-                        <div>
+                        <div className="text-2xl font-bold">Expense List</div>
+                        <div className="font-content">
                             Filter by category:{' '}
                             <select
                                 name="filter"
@@ -117,7 +117,8 @@ const ExpensesContent = () => {
             </OuterWrapper>
             <OuterWrapper>
                 <ContentWrapper>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div className="grid sm:grid-cols-1 md:grid-cols-2 
+                        lg:grid-cols-3 gap-4 font-content">
                         {expenses.length > 0
                             ? expenses.map((exp, index) => (
                                 <ExpenseComponent

@@ -24,7 +24,7 @@ const ExpensesPage = () => {
                         <ExpensesContent />
                     </div>
                 </div>
-                <footer className="absolute bottom-0 w-full bg-yellow-500 text-center p-1 text-black font-bold">
+                <footer className="fixed bottom-0 w-full bg-yellow-500 text-center p-1 text-black font-bold">
                     Copyright © 2024. All rights reserved.
                 </footer>
             </div>
